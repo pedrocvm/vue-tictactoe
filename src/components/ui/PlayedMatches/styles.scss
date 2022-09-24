@@ -1,0 +1,26 @@
+@import '@/sass/master';
+
+.playedMatchesWrapper {
+  @include flexbox(column, center, unset, map-get($spacings, xsmall));
+
+  > h3 {
+    font-size: map-get(map-get($font, sizes), large);
+  }
+
+  .matchesWrapper {
+    @include flexbox(row, center, unset, map-get($spacings, xxsmall));
+    flex-wrap: wrap;
+    
+    .circle {
+      height: 1.8rem;
+      width: 1.8rem;
+      border: 0.1rem solid map-get($colors, darkgray);
+      border-radius: map-get($border, rounded);
+
+      &.filled{
+        background: map-get($colors, darkgray);
+        border-color: map-get($colors, darkgray);
+      }
+    }
+  }
+}

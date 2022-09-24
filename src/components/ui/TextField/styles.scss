@@ -1,0 +1,44 @@
+@import '@/sass/master';
+
+.textFieldWrapper {
+  position: relative;
+  height: 2.5rem;
+
+  input {
+    width: 100%;
+    padding: 
+      map-get($spacings, tiny) 
+      3.7rem 
+      map-get($spacings, tiny)
+      map-get($spacings, xxsmall);
+    border: 0.1rem solid map-get($colors, gray);
+    transition: map-get($transition, default);
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: map-get($colors, gray);
+      font-size: map-get(map-get($font, sizes), xxsmall);
+    }
+  }
+
+  .iconWrapper {
+    height: 100%;
+    width: 3rem;
+    @include flexbox(row, center, center, 0);
+    background-color: map-get($colors, midgray);
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    > img {
+      width: 1.8rem;
+      height: 1.8rem;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import '@/sass/master';
+
+.statisticsSectionWrapper {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+
+  > div:first-child {
+    margin-bottom: map-get($spacings, xxlarge);
+  }
+
+  .gameDataWrapper {
+    @include flexbox(row, unset, space-around, map-get($spacings, small));
+    margin-bottom: map-get($spacings, xxlarge);
+
+    > div {
+      width: 30.5rem;
+    }
+
+    .gameData {
+      @include flexbox(column, center, unset, map-get($spacings, small));
+    }
+  }
+
+  .gameTimeWrapper {
+    @include flexbox(row, center, center, 0);
+  }
+
+  // RESPONSIVE
+  @media (max-width: 1024px) {
+    .gameDataWrapper {
+      @include flexbox(column, center, center, map-get($spacings, medium));
+      margin-bottom: map-get($spacings, medium);
+    }
+  }
+}

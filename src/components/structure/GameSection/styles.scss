@@ -1,0 +1,32 @@
+@import '@/sass/master';
+
+.gameSectionWrapper {
+  @include flexbox(column, center, center, map-get($spacings, medium));
+  background-color: map-get($colors, white);
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+
+  .gameArea {
+    @include flexbox(row, center, space-between, map-get($spacings, xsmall));
+    width: 100%;
+
+    h2 {
+      font-weight: map-get($font, bold);
+    }
+  }
+
+  .timerArea {
+    @include flexbox(row, center, space-between, map-get($spacings, medium));
+    width: 100%;
+  }
+
+  // RESPONSIVE
+  @media (max-width: 1024px) {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+
+    .gameArea{
+      justify-content: center;
+    }
+  }
+}

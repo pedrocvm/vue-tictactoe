@@ -1,0 +1,43 @@
+@import '@/sass/master';
+
+.gameResultModalWrapper {
+  @include flexbox(column, center, space-between, map-get($spacings, small));
+
+  background-color: map-get($colors, blue);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: map-get($spacings, medium) map-get($spacings, xlarge);
+
+  img {
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .resultWrapper {
+    @include flexbox(column, center, center, map-get($spacings, xsmall));
+
+    p {
+      font-size: map-get(map-get($font, sizes), xxlarge);
+      color: map-get($colors, purewhite);
+      font-weight: map-get($font, bold);
+    }
+
+    .congratulationsWrapper {
+      @include flexbox(column, center, center, map-get($spacings, xsmall));
+
+      > h2 {
+        color: map-get($colors, yellow);
+      }
+
+      > p {
+        font-size: map-get(map-get($font, sizes), large);
+      }
+    }
+  }
+  .actionWrapper {
+    width: 100%;
+  }
+}

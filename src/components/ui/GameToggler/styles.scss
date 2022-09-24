@@ -1,0 +1,21 @@
+@import '@/sass/master';
+
+.gameTogglerWrapper {
+  @include flexbox(row, center, center, 0);
+
+  button {
+    height: 3.4rem;
+    width: 11.3rem !important;
+    letter-spacing: 0.07rem;
+
+    &:hover {
+      filter: none;
+    }
+  }
+  .selected {
+    button {
+      background-color: map-get($colors, darkestgray) !important;
+      color: map-get($colors, purewhite);
+    }
+  }
+}

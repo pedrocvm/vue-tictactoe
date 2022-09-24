@@ -1,0 +1,50 @@
+@import '@/sass/master';
+
+.splashScreenWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: map-get($colors, black);
+  @include flexbox(column, center, unset, 0);
+
+  .logoArea {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    z-index: map-get($layers, base);
+    @include flexbox(row, center, center, 0);
+    transition: map-get($transition, default);
+
+    animation: fadeInOut 5s;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeInOut {
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    img {
+      pointer-events: none;
+    }
+  }
+
+  .interactionArea {
+    height: 100%;
+    width: 100%;
+    @include flexbox(row, center, center, map-get($spacings, xsmall));
+    padding: 0 map-get($spacings, xlarge);
+  }
+}

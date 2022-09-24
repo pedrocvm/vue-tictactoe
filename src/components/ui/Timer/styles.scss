@@ -1,0 +1,10 @@
+@import '@/sass/master';
+
+.timerWrapper {
+  @include flexbox(row, center, center, 0);
+  margin: 0 auto;
+
+  > p {
+    font-size: map-get(map-get($font, sizes), xlarge );
+  }
+}

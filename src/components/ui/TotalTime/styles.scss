@@ -1,0 +1,5 @@
+@import '@/sass/master';
+
+.totalTimeWrapper {
+  @include flexbox(column, center, unset, map-get($spacings, xsmall));
+}

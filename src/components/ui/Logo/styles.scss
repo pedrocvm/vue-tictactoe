@@ -1,0 +1,33 @@
+@import '@/sass/master';
+
+.logoWrapper {
+  width: fit-content;
+
+  img {
+    height: 100%;
+    cursor: pointer;
+    transition: map-get($transition, default);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &.small {
+    img {
+      width: 3rem;
+    }
+  }
+
+  &.medium {
+    img {
+      width: 6rem;
+    }
+  }
+
+  &.large {
+    img {
+      width: 100%;
+    }
+  }
+}

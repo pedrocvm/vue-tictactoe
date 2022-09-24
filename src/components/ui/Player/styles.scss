@@ -1,0 +1,15 @@
+@import '@/sass/master';
+
+.playerWrapper {
+  @include flexbox(column, center, center, map-get($spacings, xxsmall));
+  min-width: fit-content;
+
+  > h2 {
+    font-size: map-get(map-get($font, sizes), xxlarge);
+    font-weight: map-get($font, normal);
+  }
+
+  > span {
+    font-size: map-get(map-get($font, sizes), huge);
+  }
+}

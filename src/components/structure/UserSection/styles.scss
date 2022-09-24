@@ -1,0 +1,72 @@
+@import '@/sass/master';
+
+.userSectionWrapper {
+  background: map-get($colors, purewhite);
+  padding-top: 4.5rem!important;
+  padding-bottom: 4.5rem!important;
+
+  @include flexbox(row, center, space-between, map-get($spacings, medium));
+
+  .infoWrapper {
+    width: 100%;
+    @include flexbox(row, center, unset, map-get($spacings, small));
+
+    .avatarWrapper {
+      img {
+        width: 15rem;
+        height: 15rem;
+        border-radius: map-get($border, rounded);
+      }
+    }
+
+    .personalDataWrapper {
+      align-self: flex-end;
+      min-width: 22rem;
+      max-width: 28rem;
+
+      h2 {
+        font-size: map-get(map-get($font, sizes), xxlarge);
+        font-weight: map-get($font, normal);
+        margin-bottom: map-get($spacings, xxsmall);
+      }
+
+      p {
+        margin-bottom: map-get($spacings, tiny);
+
+        span {
+          font-weight: map-get($font, normal);
+        }
+      }
+    }
+  }
+
+  .aboutWrapper {
+    text-align: end;
+    align-self: flex-end;
+    min-width: 30rem;
+    max-width: 40rem;
+
+    p:first-child {
+      margin-bottom: map-get($spacings, xxsmall);
+    }
+  }
+
+  // RESPONSIVE
+  @media (max-width: 1024px) {
+    @include flexbox(column, center, center, map-get($spacings, xlarge));
+
+    .infoWrapper {
+      @include flexbox(column, center, center, map-get($spacings, small));
+
+      .personalDataWrapper {
+        align-self: center;
+        text-align: center;
+      }
+    }
+
+    .aboutWrapper {
+      align-self: center;
+      text-align: center;
+    }
+  }
+}

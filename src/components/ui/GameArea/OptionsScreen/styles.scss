@@ -1,0 +1,49 @@
+@import '@/sass/master';
+
+.optionsScreenWrapper {
+  height: 100%;
+  width: 100%;
+  @include flexbox(column, center, unset, map-get($spacings, small));
+  position: relative;
+  background-color: map-get($colors, black);
+  color: map-get($colors, lightgray);
+  filter: brightness(105%);
+  padding: map-get($spacings, small) map-get($spacings, xxlarge);
+
+  .optionsWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: map-get($spacings, small);
+
+    .optionWrapper {
+      @include flexbox(column, flex-start, center, map-get($spacings, xxsmall));
+    }
+
+    .optionWrapper:nth-child(2) {
+      align-items: flex-end;
+    }
+  }
+
+  .playersIdentificationWrapper {
+    @include flexbox(column, flex-end, unset, map-get($spacings, xxsmall));
+
+    .textFieldArea {
+      @include flexbox(column, center, unset, 12px);
+
+      input {
+        height: 3rem;
+        width: 15rem;
+        border-radius: map-get($border, radius);
+      }
+    }
+  }
+
+  .interactionArea {
+    height: 100%;
+    width: 100%;
+    @include flexbox(row, center, center, map-get($spacings, medium));
+    padding: 0 map-get($spacings, medium);
+  }
+}

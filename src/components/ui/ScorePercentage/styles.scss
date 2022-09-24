@@ -1,0 +1,15 @@
+@import '@/sass/master';
+
+.scorePercentageWrapper {
+  @include flexbox(column, center, center, map-get($spacings, xxsmall));
+
+  .valueWrapper {
+    @include flexbox(row, center, center, 0);
+    height: 5rem;
+    width: 5rem;
+    border-radius: map-get($border, rounded);
+    background-color: map-get($colors, darkgray);
+    color: map-get($colors, purewhite);
+    font-weight: map-get($font, bold);
+  }
+}

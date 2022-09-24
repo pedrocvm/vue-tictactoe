@@ -1,0 +1,21 @@
+@import '@/sass/master';
+
+.gameHistoryWrapper {
+  @include flexbox(column, center, unset, map-get($spacings, xsmall));
+
+  > h3 {
+    font-size: map-get(map-get($font, sizes), large);
+  }
+
+  .matchesWrapper {
+    @include flexbox(row, center, unset, map-get($spacings, xxsmall));
+    flex-wrap: wrap;
+
+    .square {
+      height: 2.5rem;
+      width: 2.5rem;
+      border: 0.1rem solid map-get($colors, darkgray);
+      @include flexbox(row, center, center, 0);
+    }
+  }
+}

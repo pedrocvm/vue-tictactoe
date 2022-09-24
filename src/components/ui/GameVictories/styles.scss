@@ -1,0 +1,29 @@
+@import '@/sass/master';
+
+.gameVictoriesWrapper {
+  @include flexbox(column, center, unset, map-get($spacings, small));
+
+  > h3 {
+    font-size: map-get(map-get($font, sizes), large);
+  }
+
+  .scoreWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    width: 100%;
+    gap: map-get($spacings, xlarge);
+
+    .score {
+      @include flexbox(column, center, center, map-get($spacings, xsmall));
+
+      h2 {
+        font-size: map-get(map-get($font, sizes), xlarge);
+      }
+
+      > div {
+        @include flexbox(row, center, center, map-get($spacings, xsmall));
+      }
+    }
+  }
+}
